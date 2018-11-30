@@ -2,11 +2,11 @@
 
 (a)按照下图组合即可：
 
-
+![](https://github.com/Doraemonzzz/Mathematics-for-Computer-Science/blob/master/photo/Chapter%201/C1P1a.png?raw=true)
 
 (b)按照下图组合即可：
 
-
+![](https://github.com/Doraemonzzz/Mathematics-for-Computer-Science/blob/master/photo/Chapter%201/C1P1b.png?raw=true)
 
 (c)如果$a=b$，那么上图就变成一个变成为边长为$a$和$2a$的矩形，面积为$2a^2$，此时的等式为$2a^2 = a^2 + b^2 =c^2$，依旧符合勾股定理。
 
