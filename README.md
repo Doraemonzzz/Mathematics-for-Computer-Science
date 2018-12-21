@@ -15,3 +15,7 @@ https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-m
 2018/12/4
 
 - 上传Chapter 1
+
+2018/12/9
+
+- 上传Chapter 2
