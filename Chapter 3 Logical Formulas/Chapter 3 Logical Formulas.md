@@ -9,19 +9,19 @@
 | F    | T    | F               |
 | F    | F    | F               |
 
-不难看出新的$\Rightarrow$即为AND关系
+不难看出新的$\Rightarrow​$即为AND关系
 
 
 
 #### Problem 3.2
 
-(a)$R$ AND NOT($Q$)
+(a)$R$ AND NOT($Q​$)
 
 (b)$P$ AND $Q$ AND $R$
 
-(c)$R$ IMPLIES $P$
+(c)$R​$ IMPLIES $P​$
 
-(d)$P$ AND NOT($Q$) AND $R$
+(d)$P​$ AND NOT($Q​$) AND $R​$
 
 
 
@@ -59,7 +59,7 @@ c_0 =b\\
 s_k = a_{k} \text{ XOR } c_{k},
 c_{k} = a_{k-1}\text{ AND } s_{k-1}
 $$
-(b)利用(a)一位一位相加，把上述过程用下图表示，$d_i$表示结果，$c_i$表示进位：
+(b)利用(a)一位一位相加，把上述过程用下图表示，$d_i​$表示结果，$c_i​$表示进位：
 
 ![](https://github.com/Doraemonzzz/Mathematics-for-Computer-Science/blob/master/photo/Chapter%203/C3P5_1.png?raw=true)
 
@@ -69,7 +69,7 @@ $$
 
 所以
 $$
-d_0 =a_{0}\text{ AND } b_{0},c_0=a_{0} \text{ XOR } b_{0}
+d_0 =a_{0}\text{ XOR } b_{0},c_0=a_{0} \text{ AND } b_{0}
 $$
 其余位数的加法要考虑进位问题，所以称为full Adder，具体关系如下图：
 
@@ -95,37 +95,39 @@ p_0= a_0 \text{ XOR } 1\\
 c = a_0 \text{ AND } 1
 $$
 
-(b)如果$b=1$，则$o_i=p_i$，否则$o_i =a_i$，从而
+(b)如果$b=1​$，则$o_i=p_i​$，否则$o_i =a_i​$，从而
 $$
-p_{i}=(p_{(i)} \text{ AND } b)\text{ OR }(a_i \text{ AND } (\text{ NOT }b))
+o_{i}=(p_{i} \text{ AND } b)\text{ OR }(a_i \text{ AND } (\text{ NOT }b))
 $$
-(c)如果$c_{(1)}=1$，那么$c=c_{(2)}$，否则$c=c_{(1)}=0$，从而
+(c)如果$c_{(1)}=1​$，那么$c=c_{(2)}​$，否则$c=c_{(1)}=0​$，从而
 $$
 c= c_{(1)} \text{ AND }  c_{(2)}
 $$
-(d)如果$c_{(1)}=1$，那么$p_{i}=r_{i-(n+1)}$，否则$p_i= a_i$，从而
+(d)如果$c_{(1)}=1​$，那么$p_{i}=r_{i-(n+1)}​$，否则$p_i= a_i​$，从而
 $$
-p_{i}=(a_{i} \text{ AND } c_{(1)})\text{ OR }(r_{i-(n+1)} \text{ AND } (\text{ NOT }c_{(1)}))
+p_{i}=(r_{i-(n+1)} \text{ AND } c_{(1)})\text{ OR }(a_{i} \text{ AND } (\text{ NOT }c_{(1)}))
 $$
-(e)假设$n=2^k $位需要的操作次数为$T(2^k)$，注意前一半和后一半的加法可以同时完成，所以
+(e)假设$n=2^k $位需要的操作次数为$T(2^k)$，注意前一半和后一半的加法可以同时完成，完成之后我们只要计算根据$c_{(1)}$的值判断输出结果即可，所以
 $$
 T(1)= 2\\
-T(2^k)= T(2^{k-1}) +3k+1\\
-T(2^k)= \frac 3 2 k^2 +\frac 5 2 k + 2 \\
-T(n)= \frac 3 2 \log ^2n  +\frac 5 2 \log n +2
+T(2^k)= T(2^{k-1})+1\\
+T(2^k)= O(k)\\
+T(n)= O(\log n)
 $$
 
 
 
 #### Problem 3.7
 
-(a)如果用真值表，需要$2^5=32$行
+(a)一共6个变量，如果用真值表，需要$2^6=64$行
 
-(b)要使得上式为True，那么$M$为True，$N$为False，如果$P$为True，那么$Q,R,S$为True；如果$P$为False，那么$Q,R,S$为False，所以一共有两种truth environments 
+(b)要使得上式为True，那么$M​$为True，$N​$为False，如果$P​$为True，那么$Q,R,S​$为True；如果$P​$为False，那么$Q,R,S​$为False，所以一共有两种truth environments 
+
+
 
 #### Problem 3.8
 
-- 1.S，$M:T,Q:T$时成立
+- 1.S，$M:T,Q:T​$时成立
 
 - 2.S，$M:F,P和Q任意$时成立
 
@@ -137,11 +139,11 @@ $$
   $$
   (\overline {P}\text{ AND } \overline {Q})= \text{ NOT }(P \text{ OR Q})
   $$
-  所以S，$P:F,Q:F$时成立
+  所以S，$P:F,Q:F​$时成立
 
-- 6.S，$P:F,Q:F,M:F$时成立
+- 6.S，$P:F,Q:F,M:F​$时成立
 
-- 7.S，$P:F,Q:T$时成立
+- 7.S，$P:F,Q:T​$时成立
 
 - 8.V
 
@@ -152,7 +154,7 @@ $$
   | F    | T    | T               | F               | T                 | T                                        |
   | F    | F    | T               | T               | F                 | T                                        |
 
-- 9.S，$P,Q,M$都为$T$时成立
+- 9.S，$P,Q,M​$都为$T​$时成立
 
 
 
@@ -179,15 +181,22 @@ $$
 | F    | T    | T               | F               | T                                      |
 | F    | F    | T               | T               | T                                      |
 
-(b)(NOT(P OR Q)) OR (P AND Q)
-
+(b)直接取
+$$
+P\Leftrightarrow Q
+$$
+注意上式等价于
+$$
+(P \Leftarrow Q)\text{ AND }(Q \Leftarrow P)\\
+(\bar P\text{ OR } Q) \text{ AND } (\bar Q\text{ OR } P)
+$$
 (c)如果P is valid ，那么没有一个环境可以使得NOT(P)成立，即NOT(P) is not satisfiable，反之也成立。
 
 (d)
 $$
 S= (\text{NOT } P_1) \text{ OR }  (\text{NOT } P_2) ...  (\text{NOT } P_n)
 $$
-如果$S$是valid，那么$P_i$不能全为T，所以$P_1,...,P_k$不是consistent，反之，因为$P_i$不能全为T，所以$S$是valid
+如果$S​$是valid，那么$P_i​$不能全为T，所以$P_1,...,P_k​$不是consistent，反之，因为$P_i​$不能全为T，所以$S​$是valid
 
 
 
@@ -201,7 +210,7 @@ $$
 \neg Q \to B \\
 \neg B
 $$
-(b)要使得上述命题全真，则必然有$B$为F，然后根据上述关系可得
+(b)要使得上述命题全真，则$B$必然为F，然后根据上述关系可得
 
 | $L$  | $Q$  | $B$  | $N$  |
 | ---- | ---- | ---- | ---- |
@@ -223,9 +232,8 @@ A \text{ IFF }B = (\text{NOT}(A)\text{ OR } B) \text{ AND }(\text{NOT}(B)\text{ 
 $$
 对于异或运算
 $$
-A \text{ XOR }B =
-(\text{NOT}(A)\text{ AND } \text{NOT}(B)) \text{ OR } 
-(A\text{ AND } B)
+A \text{ XOR }B =(A\text{ AND } \text{NOT}(B)) \text{ OR } 
+(B\text{ AND } \text{NOT}(A)) 
 $$
 (b)
 $$
@@ -236,3 +244,192 @@ $$
 \text{NOT}(A \text{ AND }B) 
 =(\text{NOT } A) \text{ OR }(\text{NOT } B)
 $$
+
+
+
+
+
+#### Problem 3.14
+
+不难看出
+$$
+P\text{ NOR } Q = \text{NOT}(P\text{ OR } Q)
+$$
+所以
+$$
+\begin{aligned}
+(P\text{ NOR } Q )\text{ NOR } (P\text{ NOR } Q )
+&=\text{NOT}\Big( \big(\text{NOT}(P\text{ OR } Q)\big) \text{ OR }
+\big(\text{NOT}(P\text{ OR } Q)\big)\Big)\\
+&=(P\text{ OR } Q) \text{ AND }(P\text{ OR } Q) \\
+&=P\text{ OR } Q
+\end{aligned}
+$$
+并且
+$$
+P\text{ NOR } 0= \text{NOT}(P\text{ OR } 0) = \text{NOT }P
+$$
+所以$\text{NOR}$可以表示或运算以及非运算，从而能够表达所有的逻辑运算。
+
+
+
+#### Problem 3.15
+
+如果
+$$
+\bar A = P_1 \text{ OR }P_2...\text{ OR }P_n\\
+P_i = Q_1\text{ AND }Q_2...\text{ AND }Q_{j_i}
+$$
+那么
+$$
+A =  \bar P_1 \text{ AND } \bar P_2...\text{ AND }\bar P_n\\
+\bar P_i = \bar Q_1\text{ OR }\bar Q_2...\text{ OR }\bar Q_{j_i}
+$$
+所以可以从否命题的析取范式得到原命题的合取范式。
+
+
+
+#### Problem 3.16
+
+$$
+\begin{aligned}
+A\text{ XOR } B\text{ XOR } C
+&= \big((\bar A\text{ AND } B) \text{ OR }(\bar B\text{ AND } A)\big)
+\text{ XOR } C\\
+&=\Big(\text{NOT}\big((\bar A\text{ AND } B) \text{ OR }(\bar B\text{ AND } A)\big) 
+\text{ AND } C \Big)
+ \text{ OR }  \Big(\big((\bar A\text{ AND } B) \text{ OR }(\bar B\text{ AND } A)\big) 
+ \text{ AND } \bar C\Big)\\
+ &=\Big(\text{NOT}(\bar A\text{ AND } B) \text{ AND }\text{NOT}(\bar B\text{ AND } A)
+\text{ AND } C \Big)
+ \text{ OR }\\
+ & \ \ \ \ \Big((\bar A\text{ AND } B \text{ AND }\bar C) \text{ OR }
+ (\bar B\text{ AND } A \text{ AND } \bar C)
+\Big) \\
+&=\Big((A\text{ OR } \bar B)  \text{ AND }( B\text{ OR } \bar A)\text{ AND } C \Big)
+\text{ OR } (\bar A\text{ AND } B \text{ AND } \bar C)\text{ OR }
+ (\bar B\text{ AND } A \text{ AND } \bar C) 
+\end{aligned}
+$$
+
+接着处理$(A\text{ OR } \bar B)  \text{ AND }( B\text{ OR } \bar A)\text{ AND } C$
+$$
+\begin{aligned}
+(A\text{ OR } \bar B)  \text{ AND }( B\text{ OR } \bar A)\text{ AND } C 
+&=\Big(\big((A\text{ OR } \bar B) \text{ AND }B\big )\text{ OR }
+\big((A\text{ OR } \bar B) \text{ AND }\bar A\big )\Big) \text{ AND } C  \\
+&=\Big(\big(A \text{ AND }B\big )\text{ OR }
+\big(\bar B \text{ AND }\bar A\big )\Big)\text{ AND } C  \\
+&=\big(A \text{ AND }B\text{ AND } C\big )\text{ OR }\big(\bar B \text{ AND }\bar A\text{ AND } C \big )
+\end{aligned}
+$$
+从而
+$$
+A\text{ NOR } B\text{ NOR } C = \big(A \text{ AND }B\text{ AND } C\big )\text{ OR }\big(\bar B \text{ AND }\bar A\text{ AND } C \big ) \text{ OR } (\bar A\text{ AND } B \text{ AND }\bar C)\text{ OR }
+ (\bar B\text{ AND } A \text{ AND } \bar C)
+$$
+
+
+
+#### Problem 3.17
+
+(a)题目的意思是解释为什么3.27是satisfiable等价于下式
+$$
+\Big(X_1\text{ IFF }(P\text{ XOR }Q)\Big) \text{ AND }\\
+\Big(X_2\text{ IFF }(X_1\text{ XOR }R)\Big) \text{ AND }\\
+\Big(A\text{ IFF }(\bar P\text{ AND }S)\Big) \text{ AND }\\
+\Big(O\text{ IFF }(X_2\text{ OR }A)\Big) \text{ AND }\\
+O
+$$
+是satisfiable。记3.27为$M$，上式为$N$。
+
+如果$N​$是satisfiable，那么存在一种情形，使得上式每一项都为真，所以有如下关系
+
+| 命题                                 | 真值 |
+| ------------------------------------ | ---- |
+| $O$                                  | 1    |
+| $O\text{ IFF }(X_2\text{ OR }A)$     | 1    |
+| $A\text{ IFF }(\bar P\text{ AND }S)$ | 1    |
+| $X_2\text{ IFF }(X_1\text{ XOR }R)$  | 1    |
+| $X_1\text{ IFF }(P\text{ XOR }Q)$    | 1    |
+
+特别地，取
+
+| 命题 | 真值 |
+| ---- | ---- |
+| $P$  | 0    |
+| $Q$  | 1    |
+| $R$  | 1    |
+| $S$  | 1    |
+
+此时$M​$为真，所以$N​$是satisfiable可以推出$M​$是satisfiable。
+
+反之，如果$M​$是satisfiable，那么
+$$
+((P\text{ XOR }Q) \text{ XOR } R)为真\\
+或者\\
+(\bar P\text{ AND }S)为真
+$$
+如果$((P\text{ XOR }Q) \text{ XOR } R)$为真，那么$(X_1\text{ XOR }R)$为真，其中$X_1\text{ IFF }(P\text{ XOR }Q)$，所以$X_2$为真，从而$(X_2\text{ OR }A)$为真，$O$为真；
+
+如果$(\bar P\text{ AND }S)$为真，那么$A$为真，从而$(X_2\text{ OR }A)$为真，$O$为真。
+
+无论哪种情形，都可以得到$O$为真，接着按照要求赋值即可，从而$M$是satisfiable可以推出$N$是satisfiable。
+
+(b)该题参考如下解答，但是没有完全解出来，但感觉基本思路应该是对的。
+
+https://cs.stackexchange.com/questions/3021/3cf-3-conjunctive-form-satisfiability
+
+首先不难得到如下关系
+$$
+a\Leftrightarrow b \text{ IFF }  (\bar a \vee  b) \wedge  (\bar b \vee  a)
+$$
+结合(a)可知，我们每一次的操作为引入$b​$，使得
+$$
+a\Leftrightarrow b
+$$
+该逻辑运算等价于
+$$
+(\bar a \vee  b) \wedge  (\bar b \vee  a)
+$$
+其中
+$$
+b= c * d,*为某种逻辑操作
+$$
+注意到$b=c*d$一定能表示为如下形式
+$$
+( c \vee d) \wedge( \bar c \vee d) \wedge( c \vee \bar d) \wedge(\bar c \vee\bar d)
+$$
+$\bar b​$一定能表示为如下形式
+$$
+( c \vee d) \wedge( \bar c \vee d) \wedge( c \vee \bar d) \wedge(\bar c \vee\bar d)
+$$
+带入不难发现一共有$8$个三元组，即$24$个变量。从而每一步的变量从$2$最多变为$24$，从而总体变量最多变为$12$倍。
+
+(c)对每个二元运算$a*b$，引入$c$，使得
+$$
+c \text{ IFF } a*b
+$$
+然后利用(b)的方法得到规范形式。
+
+
+
+#### Problem 3.18
+
+题目的意思是用命题公式或者数字电路表达SAT问题是一致的。我没有完全理解题目的含义，但是感觉因为数字电路能够表达非，或逻辑，所以就可以表达命题公式，从而两者没有区别。
+
+
+
+#### Problem 3.19
+
+(a)1,3
+
+(b)1,3,4
+
+(c)1,2,4
+
+
+
+#### Problem 3.20
+
+不难看出(a)正确，因为(a),(d)等价，所以(d)也正确。
