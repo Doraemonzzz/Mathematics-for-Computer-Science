@@ -8,6 +8,10 @@
 
 https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm
 
+部分习题的官方解答：
+
+https://courses.csail.mit.edu/6.042/past-devel/
+
 
 
 更新日志：
